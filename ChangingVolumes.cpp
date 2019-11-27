@@ -12,18 +12,19 @@ Write a program that given 𝑎 and 𝑏, finds the minimum number of presses to
 
 #include <iostream>
 #include <algorithm>
+using namespace std;
 
 int main() {
-  int N;
-  std::cin >> N;
-  for (int i = 0; i < N; ++i) {
+  int n;
+  cin >> n;
+  for (int i = 0; i < n; ++i) {
     int a, b;
-    std::cin >> a >> b;
+    cin >> a >> b;
     if (a == b) {
-      std::cout << "0" << std::endl;
+      cout << "0" << endl;
       continue;
     }
-    if (a > b) std::swap(a, b);
+    if (a > b) swap(a, b);
     int c = (b - a) / 5;
     int r = (b - a) % 5;
     switch (r) {
@@ -33,7 +34,7 @@ int main() {
       case 3: c += 2; break;
       case 4: c += 2; break;
     }
-    std::cout << c << std::endl;
+    cout << c << endl;
   }
   return 0;
 }
