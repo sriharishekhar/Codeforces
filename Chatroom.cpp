@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 string s1, s2 = "hello";
 int k = 0, pass = 0;
 int main() {
