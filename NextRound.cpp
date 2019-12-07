@@ -8,25 +8,23 @@ Calculate how many participants will advance to the next round.
 */
 
 #include <iostream>
- 
-using namespace std;
- 
-void NextRound(int n, int k) {
-  int a[n], count;
-  for (int i = 0; i < n; i++) {
-    cin >> a[i];
-  }
-  int j = k;
-  while (a[k] == a[k+1]) {
-    ++j;
-  }
-  cout << j + 1;
-}
+#include <vector>
  
 int main() {
   int n, k;
-  cin >> n >> k;
-  NextRound(n,k);
+  std::cin >> n >> k;
+  std::vector<int> v;
+  for (int i = 0; i < n; i++) {
+    int a;
+    std::cin >> a;
+    v.push_back(a);
+  }
+  int compare = v[k-1];
+  int count = 0;
+  for (int i = 0; i < n; i++) {
+    if(v[i] >= compare && v[i] > 0) ++count;
+  }
+  std::cout << count;
   return 0;
 }
 
