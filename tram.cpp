@@ -3,15 +3,14 @@
 int main() {
   int n;
   std::cin >> n;
-  int a[n], b[n];
+  int exit[n], enter[n];
   for (int i = 0; i < n; i++) {
-    std::cin >> a[i] >> b[i];
+    std::cin >> exit[i] >> enter[i];
   }
-  int sum = b[0], z = 0;
-  for (int i = 0; i < n - 1; i++) {
-    z = (b[i] - a[i+1]) + b[i+1];
-    b[i+1] = b[i+1] + (b[i] - a[i+1]); 
-    if(sum < z) sum = z;
+  int sum = 0, current = 0;
+  for (int i = 0; i < n; i++) {
+    current += enter[i] - exit[i];
+    if(sum < current) sum = current;
   }
   std::cout << sum;
   return 0;
